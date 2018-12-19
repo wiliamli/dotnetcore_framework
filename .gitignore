@@ -1,0 +1,8 @@
+*.dll
+*.pdb
+*.ide-shm
+*.ide-wal
+*.dtbcache
+bin/
+obj/
+

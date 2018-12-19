@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jwell.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Jwell.Web.App_Start.GlobalActionFilter">
+            <summary>
+            ActionFilter
+            </summary>
+        </member>
+        <member name="M:Jwell.Web.App_Start.GlobalActionFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Action执行执行之前
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Jwell.Web.App_Start.GlobalActionFilter.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            Action执行完成后
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Jwell.Web.App_Start.GlobalExceptionFilterAttribute">
+            <summary>
+            全局异常过滤
+            </summary>
+        </member>
+        <member name="M:Jwell.Web.App_Start.GlobalExceptionFilterAttribute.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            异常捕获
+            </summary>
+            <param name="context">当前上下文</param>
+        </member>
+        <member name="T:Jwell.Web.Controllers.Base.BaseApiController">
+            <summary>
+            基类Api
+            </summary>
+        </member>
+        <member name="M:Jwell.Web.Controllers.Base.BaseApiController.StandardAction(System.Action)">
+            <summary>
+            标准数据返回
+            </summary>
+            <param name="action">action</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jwell.Web.Controllers.Base.BaseApiController.StandardAction``1(System.Func{``0})">
+            <summary>
+            标准数据返回
+            </summary>
+            <typeparam name="T">返回参数</typeparam>
+            <param name="func">func</param>
+            <returns></returns>
+        </member>
+        <member name="T:Jwell.Web.Controllers.Base.BaseController">
+            <summary>
+            MVC基类
+            </summary>
+        </member>
+        <member name="M:Jwell.Web.Controllers.Base.BaseController.DownloadFile(System.String,System.Byte[])">
+            <summary>
+            流文件下载
+            </summary>
+            <param name="fileName">文件名</param>
+            <param name="fileStream">文件流</param>
+        </member>
+        <member name="M:Jwell.Web.Controllers.Base.BaseController.GetMimeType(System.String)">
+            <summary>
+            可扩展
+            </summary>
+            <param name="fileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="T:Jwell.Web.Controllers.CityController">
+            <summary>
+            示例代码
+            </summary>
+        </member>
+        <member name="M:Jwell.Web.Controllers.CityController.#ctor(Jwell.Application.Service.ICityService,Jwell.Configuration.IJwellConfiguration)">
+            <summary>
+            构造函数注入
+            </summary>
+            <param name="cityService">城市业务逻辑</param>
+            <param name="config">统一配置</param>
+        </member>
+        <member name="M:Jwell.Web.Controllers.CityController.GetCityByPage(Jwell.Application.Params.SearchCityParam)">
+            <summary>
+            城市分页
+            </summary>
+            <param name="pageParam">分页参数</param>
+            <returns>城市分页信息</returns>
+        </member>
+        <member name="M:Jwell.Web.Controllers.CityController.GetCitys">
+            <summary>
+            获取所有城市信息
+            </summary>
+            <returns>城市信息</returns>
+        </member>
+        <member name="M:Jwell.Web.Controllers.CityController.GetCitiesByIds(System.Int64[])">
+            <summary>
+            根据城市ID获取城市信息
+            </summary>
+            <param name="ids">城市ID</param>
+            <returns>城市信息</returns>
+        </member>
+        <member name="M:Jwell.Web.Controllers.CityController.GetCitiesByName(System.String)">
+            <summary>
+            根据城市名称获取城市信息
+            </summary>
+            <param name="name">城市名称</param>
+            <returns>城市信息</returns>
+        </member>
+        <member name="T:Jwell.Web.Controllers.HomeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Jwell.Web.Controllers.HomeController.#ctor(Jwell.Application.Service.ICityService)">
+            <summary>
+            
+            </summary>
+            <param name="cityService"></param>
+        </member>
+        <member name="M:Jwell.Web.Controllers.HomeController.Index">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jwell.Web.Controllers.HomeController.Privacy">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jwell.Web.Controllers.HomeController.Error">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jwell.Web.Controllers.HomeController.Export(Jwell.Application.Params.SearchCityParam)">
+            <summary>
+            导出Excel
+            </summary>
+            <param name="searchCityParam"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Jwell.Web.Controllers.ProvinceController">
+            <summary>
+            示例代码
+            </summary>
+        </member>
+        <member name="F:Jwell.Web.Controllers.ProvinceController._provinceService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Jwell.Web.Controllers.ProvinceController.#ctor(Jwell.Application.Service.IProvinceService)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="provinceService"></param>
+        </member>
+        <member name="M:Jwell.Web.Controllers.ProvinceController.Add(Jwell.Application.Dtos.ProvinceDto)">
+            <summary>
+            新增省份
+            </summary>
+            <param name="province">省份信息</param>
+            <returns>自增序列</returns>
+        </member>
+        <member name="M:Jwell.Web.Controllers.ProvinceController.AddList(System.Collections.Generic.IEnumerable{Jwell.Application.Dtos.ProvinceDto})">
+            <summary>
+            批量新增省份
+            </summary>
+            <param name="provinces">省份集合</param>
+            <returns>影响行数</returns>
+        </member>
+        <member name="M:Jwell.Web.Controllers.ProvinceController.ExecSql(Jwell.Application.Dtos.ProvinceDto)">
+            <summary>
+            执行sql，新增省份
+            </summary>
+            <param name="province">省份信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jwell.Web.Controllers.ProvinceController.Update(Jwell.Application.Dtos.ProvinceDto)">
+            <summary>
+            更新省份信息
+            </summary>
+            <param name="province">省份信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jwell.Web.Controllers.ProvinceController.Delete(Jwell.Application.Dtos.ProvinceDto)">
+            <summary>
+            删除省份
+            </summary>
+            <param name="province">省份信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jwell.Web.Controllers.ProvinceController.GetProvinceById(System.Int64)">
+            <summary>
+            根据Id获取省份
+            </summary>
+            <param name="id">id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jwell.Web.Controllers.ProvinceController.GetProvinceCount">
+            <summary>
+            获取省份数量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jwell.Web.Models.ErrorViewModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Jwell.Web.Models.ErrorViewModel.RequestId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Jwell.Web.Models.ErrorViewModel.ShowRequestId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Jwell.Web.Program">
+            <summary>
+            应用程序
+            </summary>
+        </member>
+        <member name="M:Jwell.Web.Program.Main(System.String[])">
+            <summary>
+            Main入口 
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Jwell.Web.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Jwell.Web.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Jwell.Web.Startup.#ctor(Jwell.Configuration.IJwellConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Jwell.Web.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Jwell.Web.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jwell.Web.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

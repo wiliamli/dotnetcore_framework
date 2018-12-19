@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\02_Domain\Jwell.Domian\Jwell.Domian.csproj" />
+    <ProjectReference Include="..\..\03_Repository\Jwell.Repository\Jwell.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
